@@ -18,4 +18,11 @@ class UserObserver
     {
         //
     }
+    public function saving()
+    {
+      //这样写拓展性更高，只有空的时候才指定默认头像
+      if (empty($user->avatar)){
+        $user->avatar = 'https://fsdhubcdn.phphub.org/uploads/images/201710/30/1/TrJS40Ey5k.png';
+      }
+    }
 }
