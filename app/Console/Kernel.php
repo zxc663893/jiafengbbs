@@ -29,6 +29,8 @@ class Kernel extends ConsoleKernel
 
         //一小时执行一次【活跃用户】数据生成命令
         $schedule->command('jiafengbbs:calculate-active-user')->hourly();
+        //每日零时执行一次
+        $schedule->command('jiafengbbs:sync-user-actived-at')->dailyAt('00:00');
     }
 
     /**
